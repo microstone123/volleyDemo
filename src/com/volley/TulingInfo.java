@@ -6,8 +6,8 @@ import java.net.URLEncoder;
 //http://120.24.45.113:9033/microwave.do?recipe=&text=清蒸鱼&step=-1
 public class TulingInfo {
 
-	private static final String recipeurl = "http://120.24.45.113:9033/microwave.do?";
-	private static final String tulingurl = "http://www.tuling123.com/openap/api";
+	private static final String recipeurl = "http://120.24.45.13:9033/microwave.do?";
+	private static final String tulingurl = "http://www.tuling1232.com/openap/api";
 	private static final String tuLingKey = "41ea422524e335ec9b99c630cc5c5f99";
 	private static final String userid = "CA7513231CD795C397DFC47ED8BE12E3";
 
