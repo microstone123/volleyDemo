@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.android.volley.MultipartRequest;
 import com.android.volley.Request.Method;
 import com.android.volley.Response;
@@ -60,7 +61,7 @@ public class MainActivity extends BaseActivity {
 		// 构造参数列表
 		List<Part> partList = new ArrayList<Part>();
 		PicRecognizeParamet picRecognizeParamet = new PicRecognizeParamet();
-		String jData = JsonBinder.toJson(picRecognizeParamet);
+		String jData = JSON.toJSONString(picRecognizeParamet);
 		partList.add(new StringPart("JsonData", jData));
 		try {
 			partList.add(new FilePart("photo", new File(path)));
