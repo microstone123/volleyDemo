@@ -2,6 +2,8 @@ package com.volley;
 
 import java.net.URLEncoder;
 
+import android.util.Log;
+
 //http://www.tuling123.com/openapi/api?key=41ea422524e335ec9b99c630cc5c5f99&info=%E5%90%83%E9%A5%AD%E6%B2%A1&userid=
 //http://120.24.45.113:9033/microwave.do?recipe=&text=清蒸鱼&step=-1
 public class TulingInfo {
@@ -12,7 +14,7 @@ public class TulingInfo {
 	private static final String userid = "CA7513231CD795C397DFC47ED8BE12E3";//
 	// private static final String QAURL = "http://10.133.230.26:8888/talk.do";
 	// public static final String QAURL = "http://10.133.225.31:1234/test";
-	public static final String url = "10.133.225.31";
+	public static String url = "10.133.225.18";
 
 	// 10.133.225.17:1234
 
