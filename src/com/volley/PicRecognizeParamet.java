@@ -18,7 +18,7 @@ public class PicRecognizeParamet {
 	}
 
 	public void setResultListData(String reData, String checkData) {
-		List<ResultList> list = new ArrayList<>();
+		List<ResultList> list = new ArrayList<ResultList>();
 		list.add(new ResultList(reData, checkData));
 		body.setResultList(list);
 	}

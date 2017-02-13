@@ -13,8 +13,9 @@ public class TulingInfo {
 	private static final String tuLingKey = "41ea422524e335ec9b99c630cc5c5f99";
 	private static final String userid = "CA7513231CD795C397DFC47ED8BE12E3";//
 	// private static final String QAURL = "http://10.133.230.26:8888/talk.do";
-	// public static final String QAURL = "http://10.133.225.31:1234/test";
-	public static String url = "10.133.225.18";
+	 public static final String QAURL = "http:// 120.26.38.142:10011/v1/app/recipe/sound/recognition/list";
+//	public static String url = "10.133.225.18";
+	
 
 	// 10.133.225.17:1234
 
@@ -27,7 +28,7 @@ public class TulingInfo {
 	// }
 
 	public static String getQAParameter(String info) {
-		return "http://" + url + ":1234/test";
+		return QAURL;
 	}
 
 	public static String getrecipeParameter(String recipe, String text, int step) {

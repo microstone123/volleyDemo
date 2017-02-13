@@ -3,7 +3,9 @@ package com.volley;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.android.volley.MultipartRequest;
 import com.android.volley.Request.Method;
+import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.part.FilePart;
@@ -27,17 +30,28 @@ public class MainActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		tv = (TextView) findViewById(R.id.tv);
-		postRecipeData();
+//		setContentView(R.layout.activity_main);
+//		tv = (TextView) findViewById(R.id.tv);
+		// postRecipeData();
 		// getRecipeData("", "清蒸鱼", -1);
 		Log.e("onCreate", "onCreate");
+		getTulingData("");
 	}
 
 	protected void getTulingData(String info) {
 		Log.e("101", "start 101");
-		stringRequest = new StringRequest(Method.GET, TulingInfo.getTulingParameter(info), responseListener(),
-				errorListener());
+		stringRequest = new StringRequest(Method.POST,
+				"http:// 120.26.38.142:10011/v1/app/recipe/sound/recognition/list", responseListener(), errorListener()) {
+
+			@Override
+			protected Map<String, String> getParams() throws AuthFailureError {
+				Map<String, String> params = new HashMap<String, String>();
+
+				params.put("inputString", "今天有朋友来吃饭，吃什么呐");
+				return params;
+			}
+
+		};
 		executeRequest(101, stringRequest);
 	}
 
